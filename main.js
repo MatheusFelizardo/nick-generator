@@ -23,17 +23,18 @@ const countLetters = (e) => {
   const splited = string.split('')
 
   const grouped = splited.map(letter => {
+    const lowercaseLetter = letter.toLowerCase()
     const restricted = ['a', 'e', 'i', 'o', 'u', 'á', 'â', 'ã', 'é', 'ê', 'í', 'ó', 'ô', 'õ', 'ú', ' ']
 
-    if (letter === 'ç') {
+    if (lowercaseLetter === 'ç') {
       return 'c'
     }
 
-    if (restricted.includes(letter)) {
+    if (restricted.includes(lowercaseLetter)) {
       return
     }
 
-    return letter
+    return lowercaseLetter
   }).filter(item => item !== undefined)
 
   const count = []
